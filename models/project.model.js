@@ -4,19 +4,32 @@
 const { MongoGridFSChunkError } = require('mongodb');
 const mongoose = require('mongoose');
 
-let projectSchema = new mongoose.Schema({
+const projectSchema = new mongoose.Schema({
     title: {
-        type:String
+        type:String,
+        required: true
     },
     email:{
-        type:String
+        type:String,
+        required: true
+
     },
     fullname:{
-        type:String
+        type:String,
+        required: true
     },
     description:{
-        type: String
-    }
-})
+        type: String,
+        required: true
+    },
+}, {
+    toObject: {
+        virtuals: true,
+    },
+    toJSON: {
+        virtuals: true,
+    },
+});
+
 
 mongoose.model('Project', projectSchema);

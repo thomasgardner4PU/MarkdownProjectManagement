@@ -7,6 +7,7 @@ const expressHandlebars = require('express-handlebars');
 const projectsController = require('./controller/projectController');
 
 let app = express();
+let port = 5000
 
 // middleware
 app.use(bodyParser.urlencoded({
@@ -31,8 +32,8 @@ app.get('/', (req, res) => {
     res.send("Hello world")
 });
 
-app.listen(5000, () => {
-    console.log("Server is running on Port 5000");
+app.listen(port, () => {
+    console.log(`Listening to server on port ${port}!`);
 });
 
 app.use('/project', projectsController);

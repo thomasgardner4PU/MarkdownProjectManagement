@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "Start": "nodemon server.js"
   },
   "repository": {
@@ -18,11 +17,15 @@
   },
   "homepage": "https://github.com/thomasgardner4PU/MarkdownProjectManagement#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "body-parser": "^1.19.1",
     "email-validator": "^2.0.4",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
-    "mongoose": "^6.1.7",
+    "mongoose": "^6.1.7"
+  },
+  "devDependencies": {
+    "handlebars": "^4.5.0",
     "nodemon": "^2.0.15"
   }
 }

@@ -1,0 +1,30 @@
+<h3>
+    <a href="/project">
+        <i class="fa fa-plus"></i>
+        Create new
+    </a>
+    EmployeeList
+</h3>
+
+<table class="table table-striped">
+    <thread>
+        <tr>
+            <th>Title</th>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thread>
+    <tbody>
+
+    <ul class="project_list">
+        {{#each list}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.email}}</td>
+            </tr>
+        {{/each}}
+    </ul>
+    </tbody>
+</table>
