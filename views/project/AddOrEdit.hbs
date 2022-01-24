@@ -1,0 +1,33 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/Project" method="POST" autocomplete="off">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" placeholder="Title">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Email">
+
+        <form class="form-row">
+            <div class="form-group md-6">
+                <label>Full name</label>
+                <input class="form-control" type="text" name="fullname" placeholder="Full Name">
+            </div>
+
+            <div class="form-group md-6">
+                <label>Description</label>
+                <input class="form-control" type="text" name="description" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info">
+                    <i class="fa fa-database"></i>
+                    Submit
+                </button>
+                <a href="" class="btn btn-danger">
+                    <i class="fa fa-list-alt"></i>
+                    View All
+                </a>
+            </div>
+        </form>
+</form>
