@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const expressHandlebars = require('express-handlebars');
+const projectsController = require('./controller/projectController');
 
 let app = express();
 
@@ -28,8 +29,10 @@ app.set('view engine', 'hbs'); // successfully configured the express handlebars
 // configuring the route for the home page
 app.get('/', (req, res) => {
     res.send("Hello world")
-})
+});
 
 app.listen(5000, () => {
     console.log("Server is running on Port 5000");
-})
+});
+
+app.use('/project', projectsController);
