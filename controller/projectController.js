@@ -1,6 +1,7 @@
 const express = require('express');
 
 const mongoose = require('mongoose');
+const e = require("express");
 
 // include the model class
 const Project = mongoose.model('Project');
@@ -30,6 +31,17 @@ function insertProject(req,res) {
     project.fullname = req.body.fullname;
     project.description = req.body.description;
 
+    //checking for validation
+    if (project.title === "" || project.email === "" || project.fullname === "" || project.description === ""){
+        res.render('project/addOrEdit.hbs', {
+            viewTitle:'Insert Project',
+            error:'Enter all the details',
+            project:req.body
+        })
+
+        return;
+    }
+
     project.save((err, doc) => {
         // if there is no error
 
@@ -37,6 +49,16 @@ function insertProject(req,res) {
             res.redirect('project/list');
         }
         else{
+
+            if (err.name === "ValidationError"){
+                handleValidationError(err, req.body);
+
+                res.render('project/addOrEdit', {
+                    viewTitle:'Insert project',
+                    project:req.body
+                })
+            }
+
             console.log("An error was detected while inserting a record");
         }
     });
@@ -63,5 +85,22 @@ router.get('/list', (req, res) => {
         }
     })
 })
+
+function handleValidationError(err,body){
+    for (field in err.errors){
+        switch(err.errors[field].path){
+            case 'title':
+                body['titleError'] = err.errors[field].message;
+                break;
+
+            case 'email':
+                body['emailError'] = err.errors[field].message;
+                break;
+            default:
+
+                break;
+        }
+    }
+}
 
 module.exports = router;

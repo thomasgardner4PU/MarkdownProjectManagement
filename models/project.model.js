@@ -4,6 +4,8 @@
 const { MongoGridFSChunkError } = require('mongodb');
 const mongoose = require('mongoose');
 
+const validator = require('email-validator');
+
 const projectSchema = new mongoose.Schema({
     title: {
         type:String,
@@ -30,6 +32,10 @@ const projectSchema = new mongoose.Schema({
         virtuals: true,
     },
 });
+
+projectSchema.path('email').validate((val) => {
+    return validator.validate(val);
+}, "Invalid Email")
 
 
 mongoose.model('Project', projectSchema);
