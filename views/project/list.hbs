@@ -17,16 +17,23 @@
         </tr>
     </thread>
     <tbody>
+    {{#each list}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.fullname}}</td>
+            <td>{{this.description}}</td>
+            <td>
+                <a href="">
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true">
 
-    <ul class="project_list">
-        {{#each list}}
-            <tr>
-                <td>{{this.title}}</td>
-                <td>{{this.email}}</td>
-                <td>{{this.fullname}}</td>
-                <td>{{this.description}}</td>
-            </tr>
-        {{/each}}
-    </ul>
+                    </i>
+                </a>
+            </td>
+        </tr>
+    {{/each}}
     </tbody>
 </table>
