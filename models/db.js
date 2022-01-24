@@ -14,3 +14,6 @@ mongoose.connect(url, {useNewUrlParser:true}, (err) => {
         console.log("An error occured when connecting to mongodb" + err);
     }
 })
+
+// include the project model
+require('../models/project.model');
