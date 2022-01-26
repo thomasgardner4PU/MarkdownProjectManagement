@@ -1,4 +1,5 @@
 const express = require('express');
+const websocket = require('socket.io');
 
 const mongoose = require('mongoose');
 const e = require("express");
@@ -25,8 +26,6 @@ router.post('/', (req, res) => {
     else {
         updateRecord(req,res);
     }
-
-    // creating custom function
 });
 
 function insertProject(req,res) {
@@ -71,17 +70,21 @@ function insertProject(req,res) {
     });
 }
 
-// create route to display all users
+// create route to display all projects
+function getListofUsers() {
+    router.get('/list', (req, res) => {
+        Project.collection.find().toArray(function (err, docs){
+            if (!err){
+                res.render('project/list', {
+                    list:docs
+                });
+            }
+        });
+    });
+}
+getListofUsers();
 
-router.get('/list', (req, res) => {
-    Project.collection.find().toArray(function (err, docs){
-        if (!err){
-            res.render('project/list', {
-                list:docs
-            })
-        }
-    })
-})
+
 
 // create route to update a single project by its id
 

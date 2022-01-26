@@ -4,7 +4,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const expressHandlebars = require('express-handlebars');
+const websocket = require('ws');
+const e = require("express");
+
 const projectsController = require('./controller/projectController');
+
 
 let app = express();
 let port = 5000
@@ -37,3 +41,23 @@ app.listen(port, () => {
 });
 
 app.use('/project', projectsController);
+
+const wss = new websocket.Server({ port: 4500 });
+
+/*
+ 'ws' refers to a single connection to the server-side, where as 'wss' refers to the server
+* */
+wss.on("connection", ws => {
+    console.log("new client connected!");
+
+    ws.on("message", data => { // 'data' refers to the actual information which the client side has sent to the server
+        console.log(`Client has sent us: ${data}`);
+
+        ws.send(data.toString());
+    })
+
+    ws.on("close", () => {
+        console.log("Client has disconnected");
+    })
+});
+

@@ -23,6 +23,7 @@
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "mongoose": "^6.1.7",
+    "socket.io": "^4.4.1",
     "ws": "^8.4.2"
   },
   "devDependencies": {

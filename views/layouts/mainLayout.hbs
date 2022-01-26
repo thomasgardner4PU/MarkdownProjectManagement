@@ -27,7 +27,7 @@
 
 
     <script>
-        const ws = new WebSocket("ws://localhost:8082");
+        const ws = new WebSocket("ws://localhost:4500");
 
         ws.addEventListener("open", () => {
             console.log("We are connected");
@@ -42,6 +42,8 @@
         ws.addEventListener("message", ({ data }) => {
             console.log(data)
         });
+
+
     </script>
 </div>
 </body>
