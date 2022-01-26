@@ -18,6 +18,8 @@
         {{{ body }}}
     </div>
 
+
+
     <h1> Also featuring Websockets! how cool!</h1>
 
     <ul class="tsummary">
@@ -27,7 +29,14 @@
 
 
     <script>
+
+
+
+
+
         const ws = new WebSocket("ws://localhost:4500");
+
+
 
         ws.addEventListener("open", () => {
             console.log("We are connected");
@@ -41,7 +50,29 @@
 
         ws.addEventListener("message", ({ data }) => {
             console.log(data)
+
+
+            if (data == "command: refresh") {
+                location.reload();
+            }
+
+
+            if (data == "client_the_list_has_been_updated"){
+                console.log("The list has been updated")
+
+                alert("The database has been updated")
+            }
         });
+
+
+        function tellServer(){
+
+            console.log("telling server")
+
+
+            ws.send("list_updated")
+            // {{!-- ws.send("command: refresh") --}}
+        }
 
 
     </script>

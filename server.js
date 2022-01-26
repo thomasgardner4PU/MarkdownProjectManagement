@@ -4,10 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const expressHandlebars = require('express-handlebars');
-const websocket = require('ws');
-const e = require("express");
-
 const projectsController = require('./controller/projectController');
+
 
 
 let app = express();
@@ -42,6 +40,11 @@ app.listen(port, () => {
 
 app.use('/project', projectsController);
 
+
+// Web socket stuff
+
+const websocket = require("ws")
+
 const wss = new websocket.Server({ port: 4500 });
 
 /*
@@ -53,11 +56,31 @@ wss.on("connection", ws => {
     ws.on("message", data => { // 'data' refers to the actual information which the client side has sent to the server
         console.log(`Client has sent us: ${data}`);
 
-        ws.send(data.toString());
-    })
+        // ws.send(data.toString());
+
+
+        if (data === "list_updated") {
+
+            console.log("📃 The list has been updated")
+
+            // Tells each client that the list has been updated
+            wss.broadcast("client_the_list_has_been_updated");
+
+        }
+        // ws.send("command: refresh")
+    });
 
     ws.on("close", () => {
         console.log("Client has disconnected");
-    })
+    });
+
 });
 
+
+// sends a socket message to every connected client
+wss.broadcast = function broadcast(msg) {
+    console.log(msg);
+    wss.clients.forEach(function each(client) {
+        client.send(msg);
+    });
+};

@@ -27,7 +27,7 @@
                 <a href="/project/{{this._id}}">
                     <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
                 </a>
-                <a href="/project/delete/{{this._id}}" onclick="return confirm('Do you want to delete this record?')">
+                <a href="/project/delete/{{this._id}}" onclick="test()">
                     <i class="fa fa-trash fa-lg" aria-hidden="true">
 
                     </i>
@@ -38,30 +38,26 @@
     </tbody>
 </table>
 
-
-<script src="/socket.io/socket.io.js"></script>
 <script>
 
-    // const socket = io('http://' + self.location.host.split(';')[0] +':4500');
-    //
-    // const websocket = require("socket.io");
-    // const wss = new ws.Server({ port: 8082 });
-    //
-    // /*
-    //  'ws' refers to a single connection to the server-side, where as 'wss' refers to the server
-    // * */
-    // wss.on("connection", ws => {
-    //     console.log("new client connected!");
-    //
-    //     ws.on("message", data => { // 'data' refers to the actual information which the client side has sent to the server
-    //         console.log(`Client has sent us: ${data}`);
-    //
-    //         ws.send(data.toString());
-    //     });
-    //
-    //     ws.on("close", () => {
-    //         console.log("Client has disconnected");
-    //     });
-    // });
+    function test(){
+        console.log("test")
+
+        ws.send("This is a test")
+        return confirm('Do you want to delete this record?')
+    }
 
 </script>
+
+{{!-- <script src="/socket.io/socket.io.js"></script?>
+<script>
+
+    const socket = io('http://' + self.location.host.split(':')[0] + ':8082');
+    io.on("connection", () => {
+        console.log("It works")
+
+
+
+    })
+
+</script --}}
