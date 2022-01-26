@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', expressHandlebars.engine({
     extname:'hbs',
     defaultLayout:'mainLayout',
-    layoutDir: __dirname + '/views/'
+    layoutDir: __dirname + '/views/',
 }));
 
 app.set('view engine', 'hbs'); // successfully configured the express handlebars

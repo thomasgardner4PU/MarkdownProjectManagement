@@ -3,7 +3,8 @@
 </div>
 <h3>{{viewTitle}}</h3>
 
-<form action="/Project" method="POST" autocomplete="off">
+<form action="/Project" method="POST" autocomplete="off"> <!-- Start of Form -->
+    <input type="hidden" name="_id" value="{{project._id}}"> <!-- this will help sore the hidden id from the mongodb database-->
     <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" name="title" value="{{project.title}}" placeholder="Title">
@@ -44,4 +45,4 @@
                 </a>
             </div>
         </form>
-</form>
+</form> <!-- End of Form -->

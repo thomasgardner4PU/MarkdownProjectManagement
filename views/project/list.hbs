@@ -24,10 +24,10 @@
             <td>{{this.fullname}}</td>
             <td>{{this.description}}</td>
             <td>
-                <a href="">
+                <a href="/project/{{this._id}}">
                     <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
                 </a>
-                <a href="">
+                <a href="/project/delete/{{this._id}}" onclick="return confirm('Do you want to delete this record?')">
                     <i class="fa fa-trash fa-lg" aria-hidden="true">
 
                     </i>
