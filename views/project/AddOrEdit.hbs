@@ -6,21 +6,21 @@
 <form action="/Project" method="POST" autocomplete="off">
     <div class="form-group">
         <label>Title</label>
-        <input type="text" class="form-control" name="title" placeholder="Title">
+        <input type="text" class="form-control" name="title" value="{{project.title}}" placeholder="Title">
         <div class="text-danger">
             {{project.titleError}}
         </div>
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Email">
+        <input type="email" class="form-control" name="email" value="{{project.email}}" placeholder="Email">
         <div class="text-danger">
             {{project.emailError}}
         </div>
         <form class="form-row">
             <div class="form-group md-6">
                 <label>Full name</label>
-                <input class="form-control" type="text" name="fullname" placeholder="Full Name">
+                <input class="form-control" type="text" name="fullname" value="{{project.fullname}}" placeholder="Full Name">
                 <div class="text-danger">
                     {{project.fullnameError}}
                 </div>
@@ -28,7 +28,7 @@
 
             <div class="form-group md-6">
                 <label>Description</label>
-                <input class="form-control" type="text" name="description" placeholder="Description">
+                <input class="form-control" type="text" name="description" value="{{project.description}}" placeholder="Description">
                 <div class="text-danger">
                     {{project.descriptionError}}
                 </div>

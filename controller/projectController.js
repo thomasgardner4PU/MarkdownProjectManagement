@@ -66,16 +66,6 @@ function insertProject(req,res) {
 
 // create route to display all users
 
-// router.get('/list', (req,res) => {
-//     Project.collection.find((err, docs).toArray() => {
-//         if (!err){
-//             res.render('project/list', {
-//                 list:docs
-//             });
-//         }
-//     })
-// }
-
 router.get('/list', (req, res) => {
     Project.collection.find().toArray(function (err, docs){
         if (!err){
