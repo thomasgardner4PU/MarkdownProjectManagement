@@ -22,7 +22,8 @@
     "email-validator": "^2.0.4",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
-    "mongoose": "^6.1.7"
+    "mongoose": "^6.1.7",
+    "ws": "^8.4.2"
   },
   "devDependencies": {
     "handlebars": "^4.5.0",

@@ -27,8 +27,6 @@ router.post('/', (req, res) => {
     }
 
     // creating custom function
-
-    // insertProject(req,res);
 });
 
 function insertProject(req,res) {
