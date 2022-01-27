@@ -32,11 +32,6 @@ app.engine('hbs', expressHandlebars.engine({
 
 app.set('view engine', 'hbs'); // successfully configured the express handlebars
 
-// configuring the route for the home page
-app.get('/register', (req, res) => {
-    res.render(path.join(__dirname+'/views/project/register.hbs'));
-});
-
 
 
 app.listen(port, () => {
