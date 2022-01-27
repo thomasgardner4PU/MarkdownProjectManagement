@@ -4,5 +4,7 @@ The web application is intended to be used by corporate users that would like to
 
 # UML Diagram
 
+![Alt text](/public/images/ERD-COMP3006.jpg)
+
 
 
