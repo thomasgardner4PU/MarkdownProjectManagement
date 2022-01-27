@@ -3,37 +3,21 @@
 <head>
     <title>Interactive User Management Application</title>
 </head>
+<script src="https://use.fontawesome.com/fae0f9de88.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<style>
-    html,body{
-        height: 100%;
-    }
-</style>
+<link rel="stylesheet" href="public/css/style.css">
+
 
 <body class="bg-info">
-<div class="row h-100 align-item-center">
-    <div style="width:680px;margin-left:380px;background-color:white;margin-top:15px;padding:20px" class="col md-6 offset-md-3">
+<div style="margin-left:330px;background-color:white;margin-top:15px;padding:20px" class="row h-100 align-item-center">
+    <div class="col md-6 offset-md-3">
         <!-- populate the child view!-->
         {{{ body }}}
     </div>
 
 
-
-    <h1> Also featuring Websockets! how cool!</h1>
-
-    <ul class="tsummary">
-        <l1> Allows to-way, event driven communication between web browser and server</l1>
-        <l1> Great for <strong>real-time</strong>applications</l1>
-    </ul>
-
-
     <script>
-
-
-
-
-
         const ws = new WebSocket("ws://localhost:4500");
 
 
@@ -73,7 +57,6 @@
             ws.send("list_updated")
             // {{!-- ws.send("command: refresh") --}}
         }
-
 
     </script>
 </div>

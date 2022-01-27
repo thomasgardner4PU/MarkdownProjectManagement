@@ -9,6 +9,14 @@ const Project = mongoose.model('Project');
 
 const router = express.Router();
 
+// router.get('/', (req,res) => {
+//     res.render('/register')
+// });
+//
+// router.get("/register", (req, res) => {
+//     res.render("register");
+// })
+
 // route of projects
 router.get('/', (req, res) => {
     res.render('project/addOrEdit.hbs', {

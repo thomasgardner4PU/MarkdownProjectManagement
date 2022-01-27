@@ -21,6 +21,9 @@ app.use(bodyParser.json()); // it will eb converting all the request data to jso
 // configuring the views of application
 app.set('views', path.join(__dirname, '/views/'));
 
+//load public
+app.use("/public", express.static(path.join(__dirname, "public")));
+
 app.engine('hbs', expressHandlebars.engine({
     extname:'hbs',
     defaultLayout:'mainLayout',
@@ -30,9 +33,11 @@ app.engine('hbs', expressHandlebars.engine({
 app.set('view engine', 'hbs'); // successfully configured the express handlebars
 
 // configuring the route for the home page
-app.get('/', (req, res) => {
-    res.send("Hello world")
+app.get('/register', (req, res) => {
+    res.render(path.join(__dirname+'/views/project/register.hbs'));
 });
+
+
 
 app.listen(port, () => {
     console.log(`Listening to server on port ${port}!`);
