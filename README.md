@@ -5,8 +5,6 @@ The web application is intended to be used by corporate users that would like to
 # Entity Relationship Diagram
 ![Alt text](/public/images/ERD-COMP3006.jpg)
 
-# UML Diagram
-
 # Use Case Diagram
 ![Alt text](/public/images/use-case-diagram_comp3006.jpg)
 
