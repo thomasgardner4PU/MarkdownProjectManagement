@@ -27,8 +27,16 @@ body {
 }
 
 /* Page Content */
-.content {padding:20px;}
+.content {
+    padding:20px;
+}
 
+.row .h-100 .align-item-center {
+    margin-left:330px;
+    background-color:white;
+    margin-top:15px;
+    padding:20px
+}
 
 
 
