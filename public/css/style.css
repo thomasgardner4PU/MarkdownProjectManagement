@@ -31,7 +31,29 @@ body {
     padding:20px;
 }
 
-.row .h-100 .align-item-center {
+
+.bg-info col .md-6 .offset-md-3 .row .h-100 .align-item-center {
+    margin-left:330px;
+    background-color:white;
+    margin-top:15px;
+    padding:20px
+}
+
+.center{
+    margin-left:330px;
+    background-color:white;
+    margin-top:15px;
+    padding:20px
+}
+
+.title{
+    margin-left:330px;
+    background-color:white;
+    margin-top:15px;
+    padding:20px
+}
+
+.createTitle{
     margin-left:330px;
     background-color:white;
     margin-top:15px;
