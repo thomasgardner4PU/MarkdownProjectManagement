@@ -12,19 +12,16 @@
 <link rel="stylesheet" href="public/css/style.css">
 
 
-<body class="bg-info">
-<div class="row h-100 align-item-center">
-    <div class="col md-6 offset-md-3">
+<body class="main">
+<div class="innerMain">
+    <div class="subInnerMain">
         <!-- populate the child view!-->
         {{{ body }}}
 
     </div>
 
-
     <script>
         const ws = new WebSocket("ws://localhost:4500");
-
-
 
         ws.addEventListener("open", () => {
             console.log("We are connected");
@@ -65,7 +62,5 @@
     </script>
 
 </div>
-
 </body>
-
 </html>

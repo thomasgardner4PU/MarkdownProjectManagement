@@ -3,49 +3,53 @@
 </div>
 <h3 class="title">{{viewTitle}}</h3>
 
-<form action="/Project" method="POST" autocomplete="off"> <!-- Start of Form -->
-    <input type="hidden" name="_id" value="{{project._id}}"> <!-- this will help sore the hidden id from the mongodb database-->
-    <div class="form-group">
-        <label>Title</label>
-        <input type="text" class="form-control" name="title" value="{{project.title}}" placeholder="Title">
-        <div class="text-danger">
-            {{project.titleError}}
+<div class="insertProject">
+    <form action="/Project" method="POST" autocomplete="off"> <!-- Start of Form -->
+        <input type="hidden" name="_id" value="{{project._id}}"> <!-- this will help sore the hidden id from the mongodb database-->
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" name="title" value="{{project.title}}" placeholder="Title">
+            <div class="text-danger">
+                {{project.titleError}}
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" name="email" value="{{project.email}}" placeholder="Email">
-        <div class="text-danger">
-            {{project.emailError}}
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" value="{{project.email}}" placeholder="Email">
+            <div class="text-danger">
+                {{project.emailError}}
+            </div>
+            <form class="form-row">
+                <div class="form-group md-6">
+                    <label>Full name</label>
+                    <input class="form-control" type="text" name="fullname" value="{{project.fullname}}" placeholder="Full Name">
+                    <div class="text-danger">
+                        {{project.fullnameError}}
+                    </div>
+                </div>
+
+                <div class="form-group md-6">
+                    <label>Description</label>
+                    <input class="form-control" type="text" name="description" value="{{project.description}}" placeholder="Description">
+                    <div class="text-danger">
+                        {{project.descriptionError}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info" onclick="tellServer()" >
+                        <i class="fa fa-database"></i>
+                        Submit
+                    </button>
+                    <a href="/project/list" class="btn btn-danger">
+                        <i class="fa fa-list-alt"></i>
+                        View All
+                    </a>
+                </div>
+                <button onclick="tellServer()">Update List</button>
+            </form>
         </div>
-        <form class="form-row">
-            <div class="form-group md-6">
-                <label>Full name</label>
-                <input class="form-control" type="text" name="fullname" value="{{project.fullname}}" placeholder="Full Name">
-                <div class="text-danger">
-                    {{project.fullnameError}}
-                </div>
-            </div>
+    </form> <!-- End of Form -->
+</div>
 
-            <div class="form-group md-6">
-                <label>Description</label>
-                <input class="form-control" type="text" name="description" value="{{project.description}}" placeholder="Description">
-                <div class="text-danger">
-                    {{project.descriptionError}}
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-info" onclick="tellServer()" >
-                    <i class="fa fa-database"></i>
-                    Submit
-                </button>
-                <a href="/project/list" class="btn btn-danger">
-                    <i class="fa fa-list-alt"></i>
-                    View All
-                </a>
-            </div>
-        </form>
-    </div>
-</form> <!-- End of Form -->
 
-<button onclick="tellServer()">TEST</button>
+
