@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "Start": "nodemon server.js"
+    "Start": "nodemon server.js",
+    "test": "cross-env NODE_ENV=test mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,13 @@
     "ws": "^8.4.2"
   },
   "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.3",
     "handlebars": "^4.5.0",
-    "nodemon": "^2.0.15"
+    "mocha": "^9.2.0",
+    "mockgoose": "^8.0.4",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   }
 }

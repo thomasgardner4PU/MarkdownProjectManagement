@@ -18,6 +18,15 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json()); // it will eb converting all the request data to json format
 
+
+// app.get("/project", (req, res) => {
+//     res.status(200).send({message: "welcome to the RestAPI"});
+// })
+//
+// app.get("/project/list", (req, res) => {
+//     res.status(200).send;
+// })
+
 // configuring the views of application
 app.set('views', path.join(__dirname, '/views/'));
 
@@ -34,7 +43,7 @@ app.set('view engine', 'hbs'); // successfully configured the express handlebars
 
 
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Listening to server on port ${port}!`);
 });
 
@@ -84,3 +93,5 @@ wss.broadcast = function broadcast(msg) {
         client.send(msg);
     });
 };
+
+module.exports = server;

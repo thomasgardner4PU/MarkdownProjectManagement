@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const url = "mongodb+srv://tguop2021:inctVlOgj8JcW7BK@cluster0.riszx.mongodb.net/projectsDB?retryWrites=true&w=majority"
